@@ -1,0 +1,50 @@
+{
+  "name": "@trysac/openapi-diff",
+  "version": "0.0.0",
+  "description": "Diff two OpenAPI 3.0 or 3.1 documents and classify each change as breaking, warning or info with ten rules, as a library and a CI CLI",
+  "license": "MIT",
+  "author": "Miguel Gomez",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trysac/u057-openapi-diff.git"
+  },
+  "homepage": "https://github.com/Trysac/u057-openapi-diff#readme",
+  "bugs": {
+    "url": "https://github.com/Trysac/u057-openapi-diff/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "biome ci .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "check": "node scripts/check.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.4",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.0.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
