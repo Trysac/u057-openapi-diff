@@ -1,7 +1,6 @@
 # openapi-diff
 
-[![npm version](https://img.shields.io/npm/v/@trysac/openapi-diff.svg)](https://www.npmjs.com/package/@trysac/openapi-diff)
-[![license: MIT](https://img.shields.io/npm/l/@trysac/openapi-diff.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/Trysac/u057-openapi-diff/actions/workflows/ci.yml/badge.svg)](https://github.com/Trysac/u057-openapi-diff/actions/workflows/ci.yml)
 
 Diff two OpenAPI 3.0 or 3.1 documents and classify each change as breaking, warning or info with ten rules, available as a library and as a CI command line tool.
@@ -12,9 +11,15 @@ API teams merge contract changes that silently break clients: a removed operatio
 
 ## Install
 
+Not published to npm yet. Build it from a clone, then install it from the local path:
+
 ```sh
-npm install @trysac/openapi-diff
+git clone https://github.com/Trysac/u057-openapi-diff.git
+cd u057-openapi-diff && npm ci && npm run build
+cd ../your-project && npm install ../u057-openapi-diff
 ```
+
+Imports keep the package name: `import { ... } from "@trysac/openapi-diff"`.
 
 Requires Node.js 20 or newer. The package ships ES modules with TypeScript declarations and has one runtime dependency, `yaml` (^2.8.0).
 
